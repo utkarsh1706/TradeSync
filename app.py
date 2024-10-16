@@ -131,11 +131,12 @@ def start_background_task():
     thread.daemon = True
     thread.start()
 
-run_updates()
+
 
 @app.route('/')
 def home():
     return "Trade and Order Updates Microservice Running"
 
 if __name__ == "__main__":
+    run_updates()
     app.run(debug=True, use_reloader=False)
