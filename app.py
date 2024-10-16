@@ -50,7 +50,7 @@ def updateTrades():
                         ask_order_id=trade['ask_order_id']
                     )
                     newTrade.save()
-                    print(f"Saved new trade: {newTrade.unique_id}")
+                    # print(f"Saved new trade: {newTrade.unique_id}")
             except json.JSONDecodeError as e:
                 print(f"Error decoding trade data: {e}")
             except ValidationError as e:
@@ -93,7 +93,7 @@ def updateOrders():
                             status=status,
                             side=side
                         )
-                        print(f"Updated order: {oid}")
+                        # print(f"Updated order: {oid}")
                     else:
                         newOrder = Orders(
                             oid=oid,
@@ -108,7 +108,7 @@ def updateOrders():
                             clientOrderId=clientOrderId
                         )
                         newOrder.save()
-                        print(f"Saved new order: {newOrder.oid}")
+                        # print(f"Saved new order: {newOrder.oid}")
 
             except KeyError as e:
                 print(f"Missing key in order data: {e}")
