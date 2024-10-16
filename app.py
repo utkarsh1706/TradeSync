@@ -87,7 +87,7 @@ def run_updates():
         time.sleep(30)  # Wait for 30 seconds before the next run
 
 # Start the background task in a separate thread
-@app.before_first_request
+@app.before_request
 def start_background_task():
     thread = threading.Thread(target=run_updates)
     thread.daemon = True
