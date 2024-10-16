@@ -139,4 +139,4 @@ def home():
 
 if __name__ == "__main__":
     run_updates()
-    app.run(debug=True, use_reloader=False)
+    # app.run(debug=True, use_reloader=False)
