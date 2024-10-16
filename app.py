@@ -17,7 +17,10 @@ redisHost = os.getenv("redisHost")
 redisPort = os.getenv("redisPort")
 
 # Connect to MongoDB
-connect(db="StockBrokerSystem", host=mongoURI)
+try:
+    connect(db="StockBrokerSystem", host=mongoURI)
+except Exception as e:
+    print(e)
 
 # Connect to Redis
 try:
@@ -131,12 +134,13 @@ def start_background_task():
     thread.daemon = True
     thread.start()
 
-
+print("STarted")
+run_updates()
 
 @app.route('/')
 def home():
     return "Trade and Order Updates Microservice Running"
 
-if __name__ == "__main__":
-    run_updates()
+# if __name__ == "__main__":
+    # run_updates()
     # app.run(debug=True, use_reloader=False)
