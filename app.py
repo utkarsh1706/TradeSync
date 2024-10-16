@@ -31,7 +31,7 @@ except redis.ConnectionError as e:
     print("Redis not connected due to ", e)
 
 # Flask app
-app = Flask(__name__)
+# app = Flask(__name__)
 
 # Function to update trades
 def updateTrades():
@@ -129,17 +129,17 @@ def run_updates():
         updateOrders()
         time.sleep(30)
 
-def start_background_task():
-    thread = threading.Thread(target=run_updates)
-    thread.daemon = True
-    thread.start()
+# def start_background_task():
+#     thread = threading.Thread(target=run_updates)
+#     thread.daemon = True
+#     thread.start()
 
 print("STarted")
 run_updates()
 
-@app.route('/')
-def home():
-    return "Trade and Order Updates Microservice Running"
+# @app.route('/')
+# def home():
+#     return "Trade and Order Updates Microservice Running"
 
 # if __name__ == "__main__":
     # run_updates()
