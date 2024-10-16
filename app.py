@@ -127,7 +127,7 @@ while True:
     print("Running updates...")
     updateTrades()
     updateOrders()
-    time.sleep(30)
+    time.sleep(60)
 
 # def start_background_task():
 #     thread = threading.Thread(target=run_updates)
