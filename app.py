@@ -84,7 +84,7 @@ def run_updates():
         print("Running updates...")
         updateTrades()
         updateOrders()
-        time.sleep(30)  # Wait for 30 seconds before the next run
+        time.sleep(5)  # Wait for 30 seconds before the next run
 
 # Start the background task in a separate thread
 @app.before_request
