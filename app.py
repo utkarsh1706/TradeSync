@@ -131,7 +131,7 @@ def start_background_task():
     thread.daemon = True
     thread.start()
 
-start_background_task()
+run_updates()
 
 @app.route('/')
 def home():
