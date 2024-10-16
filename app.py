@@ -122,25 +122,26 @@ def updateOrders():
         print(f"Error fetching order keys from Redis: {e}")
 
 # Function to run update operations every 30 seconds
-def run_updates():
-    while True:
-        print("Running updates...")
-        updateTrades()
-        updateOrders()
-        time.sleep(30)
+# def run_updates():
+while True:
+    print("Running updates...")
+    updateTrades()
+    updateOrders()
+    time.sleep(30)
 
-def start_background_task():
-    thread = threading.Thread(target=run_updates)
-    thread.daemon = True
-    thread.start()
+# def start_background_task():
+#     thread = threading.Thread(target=run_updates)
+#     thread.daemon = True
+#     thread.start()
 
 # Start the background task
 
 
-@app.route('/')
-def home():
-    return "Trade and Order Updates Microservice Running"
+# @app.route('/update')
+# def home():
+#     # start_background_task()
+#     return "Trade and Order Updates Microservice Running"
 
-if __name__ == "__main__":
-    start_background_task()
-    app.run(debug=True, use_reloader=False)
+# if __name__ == "__main__":
+#     # start_background_task()
+#     app.run(debug=True, use_reloader=False)
